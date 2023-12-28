@@ -1,1 +1,44 @@
 // Заголовки, общие БЄМ блоки и проче...
+.button {
+  display: inline-flex;
+  padding: rem(22) rem(32);
+  justify-content: center;
+  align-items: center;
+  gap: rem(10);
+  border-radius: rem(4);
+  text-align: right;
+  font-size: rem(16);
+  font-weight: 500;
+  line-height: normal;
+  cursor: pointer;
+
+  &-primary {
+    background: var(--yellow-color);
+    backdrop-filter: blur(rem(40));
+    color: #000;
+  }
+  &-secondary {
+    background: #fff;
+    backdrop-filter: blur(rem(40));
+    color: var(--bs-font-color);
+  }
+  &-navbar {
+    padding: rem(12) rem(32);
+    background: var(--bs-font-color);
+    color: #fff;
+  }
+}
+
+.logo {
+  font-size: rem(24);
+  font-weight: 700;
+  line-height: rem(44);
+  & span {
+    font-family: Courgette;
+    font-size: rem(25);
+    font-weight: 400;
+  }
+  &:hover span{
+    color: var(--yellow-color);
+  }
+}

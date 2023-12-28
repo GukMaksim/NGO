@@ -1,7 +1,7 @@
 {
-  "name": "gulp-2022",
-  "version": "1.7.8",
-  "description": "Сборка Gulp+Webpack+Babel",
+  "name": "NGO",
+  "version": "0.0.1",
+  "description": "NGO site",
   "main": "gulpfile.js",
   "type": "module",
   "scripts": {
@@ -16,7 +16,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/StarkElessar/gulp-2022.git"
+    "url": "git+https://github.com/GukMaksim/NGO.git"
   },
   "keywords": [
     "gulp",
@@ -26,12 +26,12 @@
     "scss",
     "html"
   ],
-  "author": "Sergei Chevdar <serj.elessar@gmail.com>",
+  "author": "Maksym Huk <maksim.guk@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/StarkElessar/gulp-2022/issues"
+    "url": "https://github.com/GukMaksim/NGO/issues"
   },
-  "homepage": "https://github.com/StarkElessar/gulp-2022#readme",
+  "homepage": "https://GukMaksim.github.io/NGO",
   "devDependencies": {
     "@babel/core": "^7.22.10",
     "@babel/preset-env": "^7.19.1",

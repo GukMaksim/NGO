@@ -2,11 +2,14 @@
   width: 100%;
   transition: background-color var(--bs-transition);
   z-index: 50;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+  background: #fff;
+  // backdrop-filter: blur(15px);
 
   .header-is-sticky & {
     // ..стили для липкого хедера
     position: fixed;
-    background-color: #007aff;
+    background-color: var(--off-white-color);
   }
 
   // .header__container
@@ -14,15 +17,112 @@
     height: rem($headerHeight);
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    gap: rem(30);
 
     .header-is-sticky & {
       height: rem($headerHeight - 50);
     }
   }
+
+  // .header__logo
+  &__logo {
+    color: #000;
+  }
+
+  &__button {
+    margin-left: auto;
+  }
+
+  // .header__burger
+  &__burger {
+    // margin-left: auto;
+  }
+
+  // .header__menu
+  &__menu {
+    margin: 0 auto;
+  }
+}
+
+.menu {
+  @include media-mx(768) {
+    position: fixed;
+    bottom: 0;
+    right: -100%;
+    width: 100%;
+    max-width: rem(360);
+    height: calc(100% - rem($headerHeight));
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: rem(40);
+    padding: rem(20);
+    background: var(--off-white-color);
+    transition: var(--bs-transition);
+    overflow: hidden auto;
+
+    .header-is-sticky & {
+      height: calc(100% - rem($headerHeight - 50));
+    }
+
+    .menu-open & {
+      right: 0;
+      z-index: 200;
+    }
+  }
+  // .menu__list
+  &__list {
+    display: flex;
+    align-items: center;
+    gap: rem(30);
+
+    @include media-mx(768) {
+      flex-direction: column;
+      align-items: stretch;
+      min-width: 100%;
+    }
+  }
+  // .menu__item
+  &__item {
+    position: relative;
+
+    @include media-mx(768) {
+      padding: rem(12) rem(15);
+      background: #fff;
+      border-radius: rem(8);
+      overflow: hidden;
+      transition: var(--bs-transition);
+    }
+  }
+  // .menu__link
+  &__link {
+    transition: color var(--bs-transition);
+    display: flex;
+    align-items: center;
+    gap: rem(6);
+    font-size: rem(16);
+    font-weight: 500;
+    line-height: prc(19, 16);
+    cursor: pointer;
+    color: var(--sc-font-color);
+
+    &:hover {
+      color: var(--primary-hover-color);
+    }
+    &._active {
+      color: var(--primary-hover-color);
+    }
+    @include media-mx(768) {
+      justify-content: space-between;
+      font-size: rem(24);
+      line-height: prc(29, 24);
+    }
+  }
 }
 
 // Burger
-/*
+
 .icon-menu {
   display: none;
 
@@ -32,12 +132,13 @@
     width: rem(30);
     height: rem(18);
     cursor: pointer;
+    background: transparent;
     z-index: 5;
 
     span,
     &::before,
     &::after {
-      content: "";
+      content: '';
       transition: all 300ms ease 0ms;
       right: 0;
       position: absolute;
@@ -59,6 +160,7 @@
     }
 
     .menu-open & {
+      z-index: 200;
       span {
         width: 0;
       }
@@ -75,4 +177,3 @@
     }
   }
 }
-*/

@@ -1,15 +1,73 @@
 .footer {
-  padding: rem(20) 0;
+  padding: rem(96) 0;
   background: var(--black-color);
 
   // .footer__container
   &__container {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
+    justify-content: space-between;
 
-    @include media-mx(510) {
+    @include media-mx(840) {
       flex-direction: column;
-      align-items: flex-start;
+      align-items: center;
     }
   }
+
+  // .footer__logo
+  &__logo {
+    color: #fff;
+    line-height: normal;
+  }
+
+  &__menu {
+    display: flex;
+    justify-content: space-between;
+    gap: rem(24);
+    padding-top: rem(14);
+  }
+
+  &__column {
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    gap: rem(24);
+  }
+
+  &__subscribe {
+    color: #fff;
+  }
+}
+
+.column {
+  &__title {
+    font-weight: 700;
+  }
+  &__link {
+    color: #fff;
+    font-size: rem(14);
+    opacity: 0.78;
+  }
+}
+
+.subscribe {
+  max-width: rem(440);
+  &__title {
+    color: #fff;
+    font-size: rem(40);
+    font-weight: 700;
+    line-height: 140%; /* 56px */
+  }
+  &__form {
+    padding-top: rem(32);
+  }
+}
+.form-subscribe__input {
+  border-radius: rem(4);
+  border: 1px solid rgba(235, 240, 249, 0.3);
+  height: 100%;
+  background: transparent;
+  padding: rem(22);
+  color: #fff;
+  font-size: rem(16);
 }
