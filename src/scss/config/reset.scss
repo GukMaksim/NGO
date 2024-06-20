@@ -1,8 +1,10 @@
+@import "mixins";
+
 * {
-  padding: 0;
   margin: 0;
-  border: 0;
-  -webkit-tap-highlight-color: transparent;
+	border: 0;
+	padding: 0;
+	-webkit-tap-highlight-color: transparent;
 
   &,
   &:before,
@@ -33,28 +35,36 @@ html {
   }
 
   &.lock {
-    overflow: hidden;
-    touch-action: none;
-  }
+		touch-action: none;
+		overflow: hidden;
+
+		[data-lp] {
+			padding-inline-end: var(--bh-scrollbar-width, #{rem(16)});
+		}
+
+		.wrapper {
+			margin-inline-end: var(--bh-scrollbar-width, #{rem(16)});
+		}
+	}
 }
 
 html,
 body {
-  width: 100%;
-  height: 100%;
-  min-width: $minWidth + px;
+	inline-size: 100%;
+	block-size: 100%;
+	min-inline-size: $min-width + px;
 }
 
 body {
-  overscroll-behavior: none;
-  font-size: var(--bs-font-size);
-  font-family: var(--bs-font-family);
-  font-weight: var(--bs-font-weight);
-  line-height: var(--bs-line-height);
-  text-rendering: optimizelegibility;
-  text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
+	overscroll-behavior: none;
+	line-height: var(--bs-line-height);
+	text-rendering: optimizelegibility;
+	text-size-adjust: 100%;
+	font-family: var(--bs-font-family);
+	font-size: var(--bs-font-size);
+	font-weight: var(--bs-font-weight);
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
 }
 
 input,
@@ -68,27 +78,32 @@ input::-ms-clear {
 }
 
 input[type="number"] {
-  -moz-appearance: textfield;
+	appearance: textfield;
 
-  &::-webkit-outer-spin-button,
-  &::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-  }
+	&::-webkit-outer-spin-button,
+	&::-webkit-inner-spin-button {
+		appearance: none;
+	}
 }
 
 button {
-  cursor: pointer;
-  user-select: none;
+	cursor: pointer;
+	user-select: none;
+	background-color: transparent;
 
-  &::-moz-focus-inner {
-    padding: 0;
-    border: 0;
-  }
+	&::-moz-focus-inner {
+		border: 0;
+		padding: 0;
+	}
 }
 
 a {
   text-decoration: none;
   user-select: none;
+  
+  &:hover {
+    text-decoration: none;
+  }
 
   &:focus,
   &:active {
@@ -96,10 +111,6 @@ a {
   }
 
   &:visited {
-    text-decoration: none;
-  }
-
-  &:hover {
     text-decoration: none;
   }
 }

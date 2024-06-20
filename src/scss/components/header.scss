@@ -1,7 +1,10 @@
+@import "../config/functions";
+@import "../config/mixins";
+
 .header {
-  width: 100%;
-  transition: background-color var(--bs-transition);
   z-index: 50;
+  inline-size: 100%;
+  transition: background-color var(--bs-transition);
   border-bottom: 1px solid rgba(0, 0, 0, 0.4);
   background: #fff;
   // backdrop-filter: blur(15px);
@@ -14,14 +17,14 @@
 
   // .header__container
   &__container {
-    height: rem($headerHeight);
     display: flex;
+    block-size: rem($header-height);
     align-items: center;
     justify-content: space-between;
     gap: rem(30);
 
     .header-is-sticky & {
-      height: rem($headerHeight - 50);
+      block-size: rem($header-height - 50);
     }
   }
 
@@ -52,7 +55,7 @@
     right: -100%;
     width: 100%;
     max-width: rem(360);
-    height: calc(100% - rem($headerHeight));
+    height: calc(100% - rem($header-height));
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -63,7 +66,7 @@
     overflow: hidden auto;
 
     .header-is-sticky & {
-      height: calc(100% - rem($headerHeight - 50));
+      height: calc(100% - rem($header-height - 50));
     }
 
     .menu-open & {

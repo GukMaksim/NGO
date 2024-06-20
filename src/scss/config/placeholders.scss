@@ -1,72 +1,74 @@
-/* Шаблоны (заготовки)
-* @extend %имя шаблона;
+/**
+	Шаблоны (заготовки)
+	@extend %имя шаблона;
 */
+
 // Счетчик для списка
 %list-counter {
-  list-style-type: none;
   counter-reset: item;
+  list-style-type: none;
 
   li {
     position: relative;
 
     &:before {
-      counter-increment: item;
       content: counter(item);
+      counter-increment: item;
       position: absolute;
-      left: 0;
-      top: 0;
+      inset-block-start: 0;
+			inset-inline-start: 0;
     }
   }
 }
 
 // Адаптивное видео
 %responsive-video {
-  position: relative;
-  overflow: hidden;
-  height: 0;
-  padding-bottom: 56.25%;
+	position: relative;
+	block-size: 0;
+	padding-block-end: 56.25%;
+	overflow: hidden;
 
-  video,
-  iframe,
-  object,
-  embed {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-  }
+	video,
+	iframe,
+	object,
+	embed {
+		position: absolute;
+		inset-block-start: 0;
+		inset-inline-start: 0;
+		inline-size: 100%;
+		block-size: 100%;
+	}
 }
 
 // Видео в качестве фона
 %video-background {
-  video,
-  iframe,
-  object,
-  embed {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    height: auto;
-    z-index: -100;
-    transform: translateX(-50%) translateY(-50%);
-    background-size: cover;
-  }
+	video,
+	iframe,
+	object,
+	embed {
+		position: fixed;
+		inset-block-start: 50%;
+		inset-inline-start: 50%;
+		z-index: -100;
+		block-size: auto;
+		min-block-size: 100%;
+		inline-size: auto;
+		min-inline-size: 100%;
+		background-size: cover;
+		transform: translateX(-50%) translateY(-50%);
+	}
 }
 
 // Серый фильтр
 %gray-filter {
-  transition: all 0.3s ease 0s;
-  filter: grayscale(1);
+	filter: grayscale(1);
+	transition: all 0.3s ease 0s;
 
-  @media (any-hover: hover) {
-    &:hover {
-      filter: grayscale(0);
-    }
-  }
+	@media (any-hover: hover) {
+		&:hover {
+			filter: grayscale(0);
+		}
+	}
 }
 
 // Отменить выделение
@@ -81,18 +83,18 @@
 
 // Плавный скролл
 %smooth-scroll {
-  -webkit-overflow-scrolling: touch;
+	-webkit-overflow-scrolling: touch;
 }
 
 // Скрыть скролл
 %hide-scroll {
-  &::-webkit-scrollbar {
-    display: none;
-  }
+	&::-webkit-scrollbar {
+		display: none;
+	}
 }
 
 %flex-center {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
